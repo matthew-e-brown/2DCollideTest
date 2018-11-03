@@ -12,8 +12,8 @@ void setup() {
 
 void draw() {
   background(51);
-  enemy.display();
-  player.display();
+  enemy.update();
+  player.update();
 
   if (up) player.pos.y -= 2;
   if (down) player.pos.y += 2;
@@ -29,6 +29,10 @@ void draw() {
     player.over = false;
     enemy.over = false;
   }
+  
+  enemy.display();
+  player.display();
+  
 }
 
 void keyPressed() {
