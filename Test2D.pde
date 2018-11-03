@@ -21,6 +21,14 @@ void draw() {
   if (right) player.pos.x += 2;
   if (spinleft) player.angle -= 0.1;
   if (spinright) player.angle += 0.1;
+  
+  if (collidePolyPoly(player.points, enemy.points)) {
+    player.over = true;
+    enemy.over = true;
+  } else {
+    player.over = false;
+    enemy.over = false;
+  }
 }
 
 void keyPressed() {
